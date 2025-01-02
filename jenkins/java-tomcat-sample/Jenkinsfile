@@ -31,7 +31,7 @@ pipeline {
         }
          stage('Deploy to Stagging Env') {
             agent {
-                label 'testnode'
+                label 'builtin-node'
             }
             steps {
                 echo "Running app on stagging env"
