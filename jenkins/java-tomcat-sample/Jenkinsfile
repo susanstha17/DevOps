@@ -44,7 +44,7 @@ pipeline {
         }
          stage('Deploy Production Environment') {
             agent {
-                label 'prodjenkins'
+                label 'ubuntuslave'
             }
             steps {
                 timeout(time:1, unit:'DAYS'){
