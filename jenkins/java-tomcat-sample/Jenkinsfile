@@ -31,7 +31,7 @@ pipeline {
         }
          stage('Deploy to Stagging Env') {
             agent {
-                label 'ubuntuslave'
+                label 'slaveubuntu'
             }
             steps {
                 echo "Running app on stagging env"
@@ -44,7 +44,7 @@ pipeline {
         }
          stage('Deploy Production Environment') {
             agent {
-                label 'ubuntuslave'
+                label 'slaveubuntu'
             }
             steps {
                 timeout(time:1, unit:'DAYS'){
