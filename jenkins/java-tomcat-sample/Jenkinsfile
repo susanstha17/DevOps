@@ -31,7 +31,7 @@ pipeline {
         }
          stage('Deploy to Stagging Env') {
             agent {
-                label 'prodjenkins'
+                label 'slaveubuntu'
             }
             steps {
                 echo "Running app on stagging env"
@@ -44,7 +44,7 @@ pipeline {
         }
          stage('Deploy Production Environment') {
             agent {
-                label 'prodjenkins'
+                label 'slaveubuntu'
             }
             steps {
                 timeout(time:1, unit:'DAYS'){
@@ -61,7 +61,7 @@ pipeline {
     }
     post { 
         always { 
-            mail to: 'devopsuryaraj@gmail.com',
+            mail to: 'susanstha29@gmail.com',
             subject: "Job '${JOB_NAME}' (${BUILD_NUMBER}) is waiting for input",
             body: "Please go to ${BUILD_URL} and verify the build"
         }
